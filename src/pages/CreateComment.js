@@ -6,14 +6,12 @@ import Button from 'react-bootstrap/Button';
 
 
 const CreateComment = () => {
-    const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [author, setAuthor] = useState("");
     const [idArticle, setIdArticle] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Titre :", title);
         console.log("Content :", content);
         console.log("Author : ", author);
         console.log("Id Article : ", idArticle);
@@ -24,9 +22,7 @@ const CreateComment = () => {
         console.log("Target Value :", event.target.value);
 
         switch (event.target.name) {
-            case "title":
-                setTitle(event.target.value);
-                break;
+
             case "content":
                 setContent(event.target.value);
                 break;
@@ -43,16 +39,6 @@ const CreateComment = () => {
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="comment.title">
-                    <Form.Label>Titre du commentaire</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="title"
-                        onChange={handleChange}
-                        value={title}
-                        placeholder="Titre du commentaire"
-                    />
-                </Form.Group>
                 <Form.Group controlId="comment.content">
                     <Form.Label>Contenu du commentaire</Form.Label>
                     <Form.Control
